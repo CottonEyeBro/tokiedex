@@ -1,5 +1,5 @@
 {
-  "name": "test-app",
+  "name": "tokiedex",
   "private": true,
   "version": "0.0.0",
   "homepage": "https://cottoneyebro.github.io/tokiedex/",
@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
@@ -33,9 +33,5 @@
     "globals": "^15.14.0",
     "typescript": "^5.7.3",
     "vite": "^6.1.1"
-  },
-  "resolutions": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
   }
 }
