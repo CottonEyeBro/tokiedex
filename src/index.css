@@ -5,7 +5,10 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --bg-color: #242424;
+  --text-color: rgba(255, 255, 255, 0.87);
+  --button-bg: #1a1a1a;
+  --button-hover-border: #646cff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,56 +16,149 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  flex-direction: column;
+  align-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
+  margin: 0 0.5em 0 0.5em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--button-bg);
+  border-color: transparent;
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
-  border-color: #646cff;
+  border-color: var(--button-hover-border);
 }
+
 button:focus,
+
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.search-bar {
+  width: 700px;
+  background-color: #1a1a1a;
+  color: rgba(255, 255, 255, 0.87);
+  border: 1px solid #646cff;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  border-radius: 8px;
+  transition: border-color 0.25s, background-color 0.25s;
+  outline: none;
+}
+
+h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#wallet-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.6em 1.2em;
+  background-color: var(--button-bg);
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-family: inherit;
+}
+
+#wallet-address {
+  font-size: 1em;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+#disconnect-button {
+  margin-left: auto;
+  padding: 0.6em 1.2em;
+  background-color: var(--button-bg);
+  color: var(--text-color);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  transition: border-color 0.25s;
+}
+
+#disconnect-button:hover {
+  border-color: var(--button-hover-border);
+}
+
+/* Tokiemon List Container */
+.tokiemon-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13em, 1fr)); /* Adjust minmax values as needed */
+  gap: 15px;
+  width: 100%; /* Ensure the container takes full width */
+}
+
+/* Tokiemon Card */
+.tokiemon-card {
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin-top: 1em;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #1a1a1a; /* Match your theme */
+  transition: transform 0.2s, box-shadow 0.2s; /* Add hover effects */
+}
+
+.tokiemon-card:hover {
+  transform: translateY(-4px); /* Slight lift on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+/* Tokiemon Card Image */
+.tokiemon-card-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  background-color: white;
+  margin-bottom: 12px;
+}
+
+/* Tokiemon Card Text */
+.tokiemon-card h3,
+.tokiemon-card p {
+  margin: 4px 0;
 }
