@@ -2,7 +2,7 @@
   "name": "test-app",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://tokiedex.vercel.app/",
+  "homepage": "https://cottoneyebro.github.io/tokiedex/",
   "type": "module",
   "scripts": {
     "dev": "vite",
